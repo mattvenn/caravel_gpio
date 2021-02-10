@@ -14,10 +14,10 @@ module io_tester(
     assign io_out[12] = wb_clk_i;
     assign io_out[14] = wb_clk_i;
 
-    // output enables
-    assign io_oeb[ 8] = 1'b1;
+    // output !enables
+    assign io_oeb[ 8] = 1'b1; // disabled
     assign io_oeb[ 9] = 1'b1;
-    assign io_oeb[10] = 1'b0;
+    assign io_oeb[10] = 1'b0; // enabled
     assign io_oeb[11] = 1'b1;
     assign io_oeb[12] = 1'b0;
     assign io_oeb[13] = 1'b1;
