@@ -52,7 +52,7 @@ void main()
 
 	*/
 
-    // 6 inputs for encoder
+    // test pins
 	reg_mprj_io_8 =   GPIO_MODE_DISABLED;
 	reg_mprj_io_9 =   GPIO_MODE_USER_STD_INPUT_NOPULL;
 	reg_mprj_io_10 =  GPIO_MODE_USER_STD_INPUT_NOPULL;
@@ -61,11 +61,15 @@ void main()
 	reg_mprj_io_13 =  GPIO_MODE_IN_AND_OUT;
 	reg_mprj_io_14 =  GPIO_MODE_IN_AND_OUT;
 
+    // one pin controlled by fw for sync with tb
+    reg_mprj_io_31 = GPIO_MODE_MGMT_STD_OUTPUT;
+
     /* Apply configuration */
     reg_mprj_xfer = 1;
     while (reg_mprj_xfer == 1);
 
-    // no need for anything else as this design is free running.
+    // start the test by setting top bit
+	reg_mprj_datal = 0x80000000;
 
 }
 

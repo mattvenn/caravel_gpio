@@ -25,6 +25,7 @@ PROJECT_FILES = io_tester.v
 GCC_PREFIX?=riscv64-unknown-elf
 GCC_PATH?=/opt/riscv64-unknown-elf-gcc-8.3.0-2020.04.1-x86_64-linux-ubuntu14/bin/
 PDK_PATH?=$$PDKPATH
+COCOTB_REDUCED_LOG_FMT=1
 
 
 SIM?=RTL

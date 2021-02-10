@@ -33,6 +33,7 @@ module io_test_tb;
 	reg power3, power4;
 
     wire gpio;
+    wire check_pin = mprj_io[31];
     wire [37:0] mprj_io;
 
 	wire flash_csb;
@@ -72,7 +73,7 @@ module io_test_tb;
 	);
 
 	spiflash #(
-		.FILENAME("rgb_mixer.hex")
+		.FILENAME("io_test.hex")
 	) spiflash (
 		.csb(flash_csb),
 		.clk(flash_clk),

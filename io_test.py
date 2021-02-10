@@ -27,6 +27,8 @@ async def test_start(dut):
     await ClockCycles(dut.clock, 80)
     dut.RSTB <= 1
 
+    await RisingEdge(dut.check_pin)
+
 @cocotb.test()
 async def test_io(dut):
     clock = Clock(dut.clock, 25, units="ns")
