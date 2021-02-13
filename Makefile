@@ -38,6 +38,9 @@ all:  coco_test
 
 hex:  ${PATTERN:=.hex}
 
+lint:
+	verible-verilog-lint *v --rules_config verible.rules
+
 coco_test: ${PATTERN}.hex
 	rm -rf sim_build/
 	mkdir sim_build/
